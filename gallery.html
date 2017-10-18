@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria</title>
+    <meta name="author" content="Aroa Barberan Poblete">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body onload="onload()">
+
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <img src="img/pelicula.jps" alt="logo" id="logo">
+            </div>
+            <!--FORMULARIO Login-->
+            <div class="modal fade" id="modal-id0">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h5 class="modal-title"><strong>Regístrate! Es gratis y siempre lo será.</strong></h5>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <label for="nameLogin"><strong>Nombre</strong></label><br>
+                                <input type="text" name="nameLogin" id="nameLogin" placeholder="nombre">
+                            </div>
+                            <div>
+                                <label for="passwordLogin"><strong>password</strong></label><br>
+                                <input type="password" name="passwordLogin" id="passwordLogin" placeholder="*******">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="btnLoginCancelar" type="button" class="btn btn-default" data-dismiss="modal">
+                                Cancelar
+                            </button>
+                            <button id="btnLoginAceptar" onclick="log.addLoginForm()" type="button"
+                                    class="btn btn-primary"
+                                    data-dismiss="modal">
+                                Aceptar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--FIN LOGIN-->
+
+
+            <!--FORMULARIO AÑADIR AUTOR-->
+            <div class="modal fade" id="modal-id1">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h5 class="modal-title"><strong>Agrega un autor! Es gratis y siempre lo será.</strong></h5>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <label for="name"><strong>Nickname</strong></label><br>
+                                <input type="text" name="name" id="name" placeholder="nombre">
+                            </div>
+                            <div>
+                                <label for="email"><strong>Email</strong></label><br>
+                                <input type="email" name="email" id="email" placeholder="pepito@gmail.com">
+                            </div>
+                            <div>
+                                <label for="password"><strong>password</strong></label><br>
+                                <input type="password" name="password" id="password" placeholder="*******">
+                            </div>
+                            <div>
+                                <label for="avatar"><strong>Avatar</strong></label><br>
+                                <input type="url" name="avatar" id="avatar" placeholder="http://...">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="btnAddAutorCancelar" type="button" class="btn btn-default" data-dismiss="modal">
+                                Cancelar
+                            </button>
+                            <button id="btnAddAutorAceptar" onclick="log.addAuthorForm()" type="button"
+                                    class="btn btn-primary"
+                                    data-dismiss="modal">
+                                Aceptar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--FIN FORMULARIO AÑADIR AUTOR-->
+
+            <!--FORMULARIO AÑADIR IMAGEN-->
+            <div class="modal fade" id="modal-id2">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h5 class="modal-title"><strong>Agrega una imagen! Tambien es gratis. </strong></h5>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <label for="title"><strong>Título</strong></label><br>
+                                <input type="text" name="title" id="title" placeholder="titulo de la imagen">
+                            </div>
+                            <div>
+                                <label for="url"><strong>URL</strong></label><br>
+                                <input type="url" name="url" id="url" placeholder="http://...">
+                            </div>
+                            <div>
+                                <label for="description"><strong>Descripción</strong></label><br>
+                                <input type="text" name="description" id="description"
+                                       placeholder="descripcion de la imagen">
+                            </div>
+                            <div>
+                                <label for="coords"><strong>Coordenadas</strong></label><br>
+                                <input type="text" name="coords" id="coords" placeholder="-54º 25 21">
+                            </div>
+                            <div>
+                                <label for="categoriaImagenAgregada"> Categoria</label>
+                                <select name="categoriaImagenAgregada" id="categoriaImagenAgregada">
+                                </select>
+                            </div>
+                            <div>
+                                <label for="autorImagenAgregada"> Autor</label>
+                                <select name="autorImagenAgregada" id="autorImagenAgregada">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="btnAddImagenCancelar" type="button" class="btn btn-default"
+                                    data-dismiss="modal">
+                                Cancelar
+                            </button>
+                            <button id="btnAddImagenAceptar" onclick="log.addImageForm()" type="button"
+                                    class="btn btn-primary" data-dismiss="modal">
+                                Aceptar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--FIN FORMULARIO AÑADIR IMAGEN-->
+
+            <!--FORMULARIO AÑADIR CATEGORIA-->
+            <div class="modal fade" id="modal-id3">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h5 class="modal-title"><strong>Agrega una categoria! Tambien es gratis. </strong></h5>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <label for="titleCategoria"><strong>Título</strong></label><br>
+                                <input type="text" name="titleCategoria" id="titleCategoria"
+                                       placeholder="titulo de la categoria">
+                            </div>
+                            <div>
+                                <label for="descriptionCategoria"><strong>Descripción</strong></label><br>
+                                <input type="text" name="descriptionCategoria" id="descriptionCategoria"
+                                       placeholder="descripcion de la categoria">
+                            </div>
+                            <div>
+                                <label for="urlCategoria"><strong>URL</strong></label><br>
+                                <input type="url" name="urlCategoria" id="urlCategoria" placeholder="http://...">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="btnAddCategoriaCancelar" type="button" class="btn btn-default"
+                                    data-dismiss="modal">
+                                Cancelar
+                            </button>
+                            <button id="btnAddCategoriaAceptar" onclick="log.addCategoriaForm()" type="button"
+                                    class="btn btn-primary" data-dismiss="modal">
+                                Aceptar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--FIN FORMULARIO AÑADIR CATEGORIA-->
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <button type="button" data-target="#nav" data-toggle="collapse" class="navbar-toggle"></button>
+            <a class="navbar-brand home" id="navbar-brand-Home" href="#">Inicio</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse" id="nav">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="autoresLink">Autores</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="categoriasLink">Categorías</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Imágenes<b
+                            class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" id="landscapeLink">Landscape</a></li>
+                        <li><a href="#" id="portraitLink">Portrait</a></li>
+                        <li><a href="#" id="imagesLink">Imagen</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="agregar">Agregar <b
+                            class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a id="addAuthor" data-toggle="modal" href="#modal-id1">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Autores</a></li>
+                        <li><a id="addCategory" data-toggle="modal" href="#modal-id3">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true">Categoria</span></a></li>
+                        <li><a id="addImage" onclick="added.createOptionsCategorys(), added.createOptionsAuthors()"
+                               data-toggle="modal" href="#modal-id2">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Imagen</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="sesion">Sesion<b
+                            class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#modal-id0" data-toggle="modal" id="login">Login</a></li>
+                        <li id="dividir" class="divider hidden"></li>
+                        <li><a href="#" id="cerrarSesion" class="hidden" onclick="cerrarSesion()">Cerrar Sesion <span
+                                class="glyphicon glyphicon-log-in" aria-hidden="true"></span></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!--FIN DEL LOGIN Y CERRAR SESION-->
+            <a class="navbar-brand navbar-right closeWindows" href="#">Cerrar Ventanas</a>
+        </div>
+    </nav>
+    <div id="content"></div>
+    <div class="div" id="contenido"></div>
+</main>
+<footer>
+    <div>
+        <p>AroaBarberán Poblete</p>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="js/object/imageObject.js"></script>
+<script src="js/object/portraitObject.js"></script>
+<script src="js/object/coordsObject.js"></script>
+<script src="js/object/landscapeObject.js"></script>
+<script src="js/object/categoryObject.js"></script>
+<script src="js/object/authorObject.js"></script>
+<script src="js/object/galleryObject.js"></script>
+<script src="js/object/cookie.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/mouse.js"></script>
+<script src="js/forms.js"></script>
+<script src="js/createData.js"></script>
+<script src="js/images.js"></script>
+<script src="js/populate.js"></script>
+<script src="js/loginCookie.js"></script>
+<script src="js/gallery.js"></script>
+</body>
+</html>

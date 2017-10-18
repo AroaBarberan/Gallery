@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Alegreya', serif;
+}
+#btnLoginAceptar, #btnAddAutorAceptar, #btnAddCategoriaAceptar, #btnAddImagenAceptar {
+    background-color: rgba(52,52,52,0.93);
+    color: #fff;
+}
+#logo {
+    width: 160px;
+    height: 100px;
+    margin: 15px;
+}
+#agregar {
+    display: none;
+}
+#navbar-brand-Home {
+    font-size: 14px;
+}
+
+#autores img {
+    cursor: pointer;
+}
+
+.row > div {
+    padding: 15px 10px;
+}
+
+.image {
+    background-color: #000;
+}
+
+.divImagen {
+    position: relative;
+}
+
+.borrar {
+    width: 40px;
+    position: absolute;
+    top: 10px;
+    left: 84%;
+}
+
+div a img {
+    padding: 8px;
+    object-fit: cover;
+    width: 350px;
+    height: 350px !important;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+
+    -ms-transition: all 0.2s ease-out;
+}
+
+div a img:hover {
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+    opacity: 0.7;
+}
+
+.divAlturaFija {
+    height: 450px;
+}
+
+.alturaTitulo {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.content {
+    margin: 30px 0px;
+}
+
+#contenido {
+    padding: 10px;
+    position: fixed;
+    color: #000;
+    width: 280px;
+    height: auto;
+    border-radius: 3px;
+    background-color: #e1e1e1;
+    display: none;
+    opacity: 0.8;
+}
+
+footer {
+    color: #fff;
+    margin-top: 35px;
+    padding: 50px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #F44336;
+}
+
